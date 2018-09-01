@@ -1,7 +1,7 @@
-package com.javarush.task.task19.task1911;
+package com.javarush.task.task19.task1912;
 
 /* 
-Ридер обертка
+Ридер обертка 2
 */
 
 import java.io.ByteArrayOutputStream;
@@ -15,10 +15,12 @@ public class Solution {
         PrintStream printStream = new PrintStream(byteArrayOutputStream);
         PrintStream consoleStream = System.out;
         System.setOut(printStream);
-        testString.printSomething();
-        String result = byteArrayOutputStream.toString().toUpperCase();
-        System.setOut(consoleStream);
 
+        testString.printSomething();
+
+        System.setOut(consoleStream);
+        String result = byteArrayOutputStream.toString();
+        result = result.replaceAll("te","??");
         System.out.println(result);
     }
 
