@@ -40,6 +40,17 @@ public class Solution {
 
     public void load(InputStream inputStream) throws Exception {
         //implement this method - реализуйте этот метод
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        while (bufferedReader.ready()) {
+            String line = bufferedReader.readLine();
+            if (line.startsWith("!") || line.startsWith("#")) line = bufferedReader.readLine();
+
+            int symb = line.indexOf("=");
+            if (symb == -1) symb = line.indexOf(":");
+
+            String key = line.substring(0,symb).trim();
+            String value = line.substring(symb+1).trim();
+        }
     }
 
     public static void main(String[] args) throws Exception{

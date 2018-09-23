@@ -11,15 +11,15 @@ public class Solution {
         //вы можете найти your_file_name.tmp в папке TMP или исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
         try {
 
-            File your_file_name = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream(your_file_name);
+            File your_file_name = new File("C:\\Users\\Nursultan\\Desktop\\Java\\IO\\in.txt");
+//            OutputStream outputStream = new FileOutputStream(your_file_name);
             InputStream inputStream = new FileInputStream(your_file_name);
 
             ClassWithStatic classWithStatic = new ClassWithStatic();
             classWithStatic.i = 3;
             classWithStatic.j = 4;
-            classWithStatic.save(outputStream);
-            outputStream.flush();
+//            classWithStatic.save(outputStream);
+//            outputStream.flush();
 
             ClassWithStatic loadedObject = new ClassWithStatic();
             loadedObject.staticString = "something";
@@ -28,8 +28,11 @@ public class Solution {
 
             loadedObject.load(inputStream);
             //check here that classWithStatic object equals to loadedObject object - проверьте тут, что classWithStatic и loadedObject равны
+            System.out.println(classWithStatic.equals(loadedObject));
+            System.out.println("i = " + loadedObject.i);
+            System.out.println("j = " + loadedObject.j);
 
-            outputStream.close();
+//            outputStream.close();
             inputStream.close();
 
         } catch (IOException e) {
@@ -48,10 +51,21 @@ public class Solution {
 
         public void save(OutputStream outputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream));
+            writer.write("" + i);
+            writer.newLine();
+
+            writer.write("" + j);
+            writer.newLine();
         }
 
         public void load(InputStream inputStream) throws Exception {
             //implement this method - реализуйте этот метод
+            int ii = inputStream.read();
+            System.out.println("ii = " + ii);
+
+            int jj = inputStream.read();
+            System.out.println("jj = " + jj);
         }
 
         @Override
