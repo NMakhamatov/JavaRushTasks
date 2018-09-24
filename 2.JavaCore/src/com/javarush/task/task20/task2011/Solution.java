@@ -7,6 +7,7 @@ import java.io.ObjectOutput;
 
 /*
 Externalizable для апартаментов
+done
 */
 public class Solution {
 
