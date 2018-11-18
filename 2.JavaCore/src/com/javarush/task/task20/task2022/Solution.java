@@ -6,7 +6,7 @@ import java.io.*;
 Переопределение сериализации в потоке
 */
 public class Solution implements Serializable, AutoCloseable {
-    private FileOutputStream stream;
+    private transient FileOutputStream stream;
 
     public Solution(String fileName) throws FileNotFoundException {
         this.stream = new FileOutputStream(fileName);
@@ -34,7 +34,17 @@ public class Solution implements Serializable, AutoCloseable {
         stream.close();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        String s = "C:\\Users\\Nursultan\\Desktop\\Java\\IO\\in.txt";
+        String serial = "C:\\Users\\Nursultan\\Desktop\\Java\\IO\\out.txt";
+        Solution solution = new Solution(s);
+        solution.writeObject("Hello!");
+        ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(serial));
+        solution.writeObject(outputStream);
 
+        Solution newSol = new Solution(s);
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(serial));
+        newSol.readObject(inputStream);
+        newSol.writeObject("Second Hello!");
     }
 }
