@@ -5,6 +5,7 @@ import java.util.Date;
 /* 
 Форматирование даты
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         Date date = new Date();
@@ -14,6 +15,6 @@ public class Solution {
     }
 
     public static String getFormattedString() {
-        return "";
+        return "%td:%tm:%ty %tH:%tM:%tS";
     }
 }

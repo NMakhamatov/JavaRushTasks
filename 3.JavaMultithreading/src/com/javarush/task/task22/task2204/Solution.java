@@ -3,6 +3,7 @@ package com.javarush.task.task22.task2204;
 /* 
 Форматирование строки
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         System.out.println(String.format(getFormattedString(), 20.0 / 7.0, 10.0 / 3.0));
@@ -12,6 +13,6 @@ public class Solution {
     }
 
     public static String getFormattedString() {
-        return "20 / 7 = % %Exp = %";
+        return "20 / 7 = %3.2f%nExp = %3.2e";
     }
 }

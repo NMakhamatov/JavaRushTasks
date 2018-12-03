@@ -3,6 +3,7 @@ package com.javarush.task.task21.task2109;
 /* 
 Запретить клонирование
 */
+//done
 public class Solution {
     public static class A implements Cloneable {
         private int i;
@@ -30,6 +31,11 @@ public class Solution {
             this.name = name;
         }
 
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            throw new CloneNotSupportedException();
+        }
+
         public String getName() {
             return name;
         }
@@ -38,6 +44,12 @@ public class Solution {
     public static class C extends B {
         public C(int i, int j, String name) {
             super(i, j, name);
+        }
+
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            C clone = new C(getI(),getJ(),getName());
+            return clone;
         }
     }
 

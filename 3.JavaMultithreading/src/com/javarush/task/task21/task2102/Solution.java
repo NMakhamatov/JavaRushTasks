@@ -1,11 +1,13 @@
 package com.javarush.task.task21.task2102;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 /* 
 Сравниваем модификаторы
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         int classModifiers = Solution.class.getModifiers();
@@ -17,7 +19,8 @@ public class Solution {
     }
 
     public static boolean isModifierSet(int allModifiers, int specificModifier) {
-        return false;
+        int res = allModifiers&specificModifier;
+        return res != 0;
     }
 
     private static Method getMainMethod() {
