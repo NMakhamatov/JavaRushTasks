@@ -1,6 +1,4 @@
-taskKey="com.javarush.task.task05.task0512"
-
-Создать класс Circle
+taskKey="com.javarush.task.task05.task0512"\n\nСоздать класс Circle
 
 Создать класс (Circle) круг, с тремя инициализаторами:
 - centerX, centerY, radius
