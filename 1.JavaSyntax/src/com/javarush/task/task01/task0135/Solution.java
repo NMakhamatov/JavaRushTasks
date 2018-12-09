@@ -3,7 +3,7 @@ package com.javarush.task.task01.task0135;
 /* 
 Выбирай здоровую еду! Выбирай фрукты!
 */
-
+//done
 public class Solution {
     public static void main(String[] args) {
         String apple = "Яблоко";
@@ -12,5 +12,7 @@ public class Solution {
         String peach = "Персик";
 
         //напишите тут ваш код
+        System.out.println(apple);
+        System.out.println(peach);
     }
 }

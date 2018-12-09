@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/* 
+/*
 Исправляем ошибки юности
 */
-
+//done
 public class Solution {
-    public static int max = 100;
+    public static int maxi = 100;
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -17,9 +17,9 @@ public class Solution {
         String max = "The max is ";
         int a = Integer.parseInt(reader.readLine());
         int b = Integer.parseInt(reader.readLine());
-        max = a > b ? a : b;
+        maxi = a > b ? a : b;
 
-        System.out.println(max + max);
+        System.out.println(max + maxi);
     }
 
 }
