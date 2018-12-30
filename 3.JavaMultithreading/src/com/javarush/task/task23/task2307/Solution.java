@@ -3,6 +3,7 @@ package com.javarush.task.task23.task2307;
 /* 
 Как выбрать нужное?
 */
+//done
 public class Solution {
     public static final String TEST = "test";
 
@@ -16,7 +17,7 @@ public class Solution {
     static Object obj;
 
     public static void main(String[] args) {
-        obj = Solution.TEST;
+        obj = new Solution.TEST();
         System.out.println(obj);
     }
 }

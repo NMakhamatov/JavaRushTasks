@@ -3,6 +3,7 @@ package com.javarush.task.task23.task2310;
 /* 
 Напряги извилины!
 */
+//done
 public class Solution {
     private String name;
 
@@ -10,7 +11,7 @@ public class Solution {
         this.name = name;
     }
 
-    private String getName() {
+     String getName() {
         return name;
     }
 

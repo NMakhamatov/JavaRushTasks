@@ -3,6 +3,7 @@ package com.javarush.task.task24.task2405;
 /* 
 Black box
 */
+//done
 public class Solution implements Action {
     public static int countActionObjects;
 
@@ -13,6 +14,29 @@ public class Solution implements Action {
 
         public void someAction() {
             //!!!!! Все изменения должны быть только тут
+            if (param>0) {
+                for (; param >0 ; param--) {
+                    System.out.println(param);
+                }
+            }
+            if (param==0) {
+                new FirstClass(){
+                    @Override
+                    public Action getDependantAction() {
+                        super.someAction();
+                        SecondClass secondClass = new SecondClass();
+                        secondClass.someAction();
+                        return secondClass;
+                    }
+                }.getDependantAction();
+//                firstClass.someAction();
+
+            } else {
+                new SecondClass(){
+
+                }.someAction();
+            }
+            System.out.println(SecondClass.SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM.replaceAll("\n","") + param);
         }
     };
 

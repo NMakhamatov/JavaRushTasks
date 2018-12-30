@@ -1,8 +1,9 @@
 package com.javarush.task.task24.task2402;
 
-/* 
+/*
 Cloneable
 */
+//done
 public class Solution {
 
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -20,7 +21,8 @@ public class Solution {
     }
 
 
-    public static class Test1 {
+    public static class Test1 implements Cloneable{
+        @Override
         protected Test1 clone() throws CloneNotSupportedException {
             return (Test1)super.clone();
         }
@@ -38,9 +40,16 @@ public class Solution {
         }
     }
 
-    public static class Test4 extends Test3 {
+    public static class Test4 extends Test3 implements Cloneable{
+
+        @Override
         protected Object c1one() throws CloneNotSupportedException {
-            return super.c1one();
+            return super.clone();
+        }
+
+        @Override
+        public Object clone() throws CloneNotSupportedException {
+            return super.clone();
         }
     }
 }

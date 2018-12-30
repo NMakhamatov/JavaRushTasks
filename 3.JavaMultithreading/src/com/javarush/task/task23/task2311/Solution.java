@@ -3,6 +3,7 @@ package com.javarush.task.task23.task2311;
 /* 
 Повторяем threads
 */
+//done
 public class Solution {
     public final String name;
     public final String food;
@@ -39,7 +40,7 @@ public class Solution {
             private void someActions() throws InterruptedException {
                 eat();
                 play();
-                sleep(1000);
+                Solution.this.sleep(1000);
             }
         };
         thread.start();

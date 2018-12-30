@@ -6,7 +6,9 @@ public class Util {
     // Пример того, как можно использовать интерфейс-маркер
     // Этот метод подходит только для классов, реализующих SelfInterfaceMarker
     public static void testClass(SelfInterfaceMarker interfaceMarker) throws UnsupportedInterfaceMarkerException {
+        if (interfaceMarker == null) throw new UnsupportedInterfaceMarkerException();
         for (Method method : interfaceMarker.getClass().getDeclaredMethods()) {
+            if (method == null) throw new UnsupportedInterfaceMarkerException();
             System.out.println(method);
         }
     }

@@ -11,6 +11,6 @@ public class SecondClass implements Action {   //second implementation
     protected StringBuilder sb = new StringBuilder(SECOND_CLASS_METHOD_STRING);
 
     public void someAction() {
-        System.out.println(sb.toString());
+        System.out.println(SECOND_CLASS_METHOD_STRING);
     }
 }
