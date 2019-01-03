@@ -6,23 +6,34 @@ import java.util.List;
 /* 
 Рефакторинг, анонимные классы
 */
+//done
 public class Solution {
     public static List<Iterator> iterators = new LinkedList<>();
 
     private int countItems;
 
     public Iterator getIterator(final String name) {
-        class LocalIterator implements Iterator {
-            public LocalIterator() {
+//        class LocalIterator implements Iterator {
+//            public LocalIterator() {
+//                countItems++;
+//                System.out.println(name + " item " + countItems);
+//            }
+//
+//            public Iterator next() {
+//                return new LocalIterator();
+//            }
+//        }
+        return new Iterator() {
+
+            {
                 countItems++;
                 System.out.println(name + " item " + countItems);
             }
 
             public Iterator next() {
-                return new LocalIterator();
+                return getIterator(name);
             }
-        }
-        return new LocalIterator();
+        };
     }
 
     public static void main(String[] args) {

@@ -1,8 +1,11 @@
 package com.javarush.task.task24.task2409;
 
-/* 
+import java.util.List;
+
+/*
 Интернет-магазин продажи джинсов
 */
+//done
 public class Solution {
 
     public static List<Jeans> allJeans = Util.getAllJeans();

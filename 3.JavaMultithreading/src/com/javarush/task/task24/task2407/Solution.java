@@ -5,6 +5,7 @@ import java.util.List;
 /* 
 Реализация интерфейса используя локальный класс
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         List<Pet> pet = Util.getPets();

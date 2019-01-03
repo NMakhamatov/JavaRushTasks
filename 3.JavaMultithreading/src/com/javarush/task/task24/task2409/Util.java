@@ -2,6 +2,7 @@ package com.javarush.task.task24.task2409;
 
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Util {
     protected static Collection<Object[]> jeansArray = new LinkedList<>();
@@ -18,6 +19,75 @@ public class Util {
         //add your code here
 
         List<Jeans> allJeans = new LinkedList<>();
+
+        abstract class AbstractJeans implements Jeans {
+           private int id;
+           private int length;
+           private int size;
+           private double price;
+
+            public AbstractJeans(int id, int length, int size, double price) {
+                this.id = id;
+                this.length = length;
+                this.size = size;
+                this.price = price;
+            }
+
+            @Override
+            public int getLength() {
+                return length;
+            }
+
+            @Override
+            public int getSize() {
+                return size;
+            }
+
+            @Override
+            public int getId() {
+                return id;
+            }
+
+            @Override
+            public double getPrice() {
+                return price;
+            }
+
+            public abstract String getTM();
+
+            @Override
+            public String toString() {
+                return getTM() + "{" +
+                        "id=" + id +
+                        ", length=" + length +
+                        ", size=" + size +
+                        ", price=" + price +
+                        '}';
+            }
+        }
+
+        class Denim extends AbstractJeans {
+
+            public Denim(int id, int length, int size, double price) {
+                super(id, length, size, price);
+            }
+
+            @Override
+            public String getTM() {
+                return Company.Denim.toString();
+            }
+        }
+
+        class Levis extends AbstractJeans {
+            public Levis(int id, int length, int size, double price) {
+                super(id, length, size, price);
+            }
+
+            @Override
+            public String getTM() {
+                return Company.Levis.toString();
+            }
+        }
 
         for (Object[] obj : getJeansArray()) {
             int id = (int) obj[0];

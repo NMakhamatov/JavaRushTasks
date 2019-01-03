@@ -15,15 +15,15 @@ public class ThisUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
     }
 
     protected String getFormattedStringForOtherThread(Thread t, Throwable e, String string) {
-        return null;
+        return "RuntimeException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1";
     }
 
     protected String getFormattedStringForSecondThread(Thread t, Throwable e, String string) {
-        return null;
+        return "java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : TooShortStringSecondThreadException";
     }
 
     protected String getFormattedStringForFirstThread(Thread t, Throwable e, String string) {
-        return null;
+        return "TooShortStringFirstThreadException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1";
     }
 }
 
