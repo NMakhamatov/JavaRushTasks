@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 /* 
 Исследуем Path
 */
+//done
 public class Solution {
     public static void main(String[] args) throws IOException {
         Path path1 = Paths.get("D:/test/data/firstDir");
@@ -16,6 +17,7 @@ public class Solution {
     }
 
     public static Path getDiffBetweenTwoPaths(Path path1, Path path2) {
-        return null;
+        return path1.relativize(path2);
+//        return path1.resolve(path2);
     }
 }

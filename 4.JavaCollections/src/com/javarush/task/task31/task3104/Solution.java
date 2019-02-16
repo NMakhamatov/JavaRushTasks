@@ -11,6 +11,7 @@ import java.util.List;
 /* 
 Поиск скрытых файлов
 */
+//done
 public class Solution extends SimpleFileVisitor<Path> {
     public static void main(String[] args) throws IOException {
         EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
@@ -39,5 +40,17 @@ public class Solution extends SimpleFileVisitor<Path> {
 
     public List<String> getFailed() {
         return failed;
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        if (file.toString().endsWith(".rar") || file.toString().endsWith(".zip")) archived.add(file.toString());
+        return super.visitFile(file, attrs);
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+            failed.add(file.toString());
+        return FileVisitResult.SKIP_SUBTREE;
     }
 }

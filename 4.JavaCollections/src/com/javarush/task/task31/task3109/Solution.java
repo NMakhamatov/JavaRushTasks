@@ -1,10 +1,14 @@
 package com.javarush.task.task31.task3109;
 
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 
 /* 
 Читаем конфиги
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -19,6 +23,15 @@ public class Solution {
     }
 
     public Properties getProperties(String fileName) {
-        return null;
+        Properties prop = new Properties();
+        try {
+            if (fileName.endsWith(".xml")) prop.loadFromXML(new FileInputStream(fileName));
+            else  prop.load(new FileReader(fileName));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            prop.clear();
+        }
+        return prop;
     }
 }
