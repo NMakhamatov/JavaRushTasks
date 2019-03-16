@@ -1,8 +1,12 @@
 package com.javarush.task.task32.task3203;
 
-/* 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+/*
 Пишем стек-трейс
 */
+//done
 public class Solution {
     public static void main(String[] args) {
         String text = getStackTrace(new IndexOutOfBoundsException("fff"));
@@ -10,6 +14,9 @@ public class Solution {
     }
 
     public static String getStackTrace(Throwable throwable) {
-        return null;
+        StringWriter result = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(result);
+        throwable.printStackTrace(printWriter);
+        return result.toString();
     }
 }
