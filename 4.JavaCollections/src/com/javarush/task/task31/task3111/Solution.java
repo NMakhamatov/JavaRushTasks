@@ -9,17 +9,18 @@ import java.util.List;
 /* 
 Продвинутый поиск файлов
 */
+//done
 public class Solution {
 
     public static void main(String[] args) throws IOException {
         SearchFileVisitor searchFileVisitor = new SearchFileVisitor();
 
-        searchFileVisitor.setPartOfName("amigo");
-        searchFileVisitor.setPartOfContent("programmer");
+        searchFileVisitor.setPartOfName("may");
+        searchFileVisitor.setPartOfContent("My name is Alex!");
         searchFileVisitor.setMinSize(500);
         searchFileVisitor.setMaxSize(10000);
 
-        Files.walkFileTree(Paths.get("D:/SecretFolder"), searchFileVisitor);
+        Files.walkFileTree(Paths.get("C:\\Users\\Nursultan\\Desktop\\Java\\IO"), searchFileVisitor);
 
         List<Path> foundFiles = searchFileVisitor.getFoundFiles();
         for (Path file : foundFiles) {
