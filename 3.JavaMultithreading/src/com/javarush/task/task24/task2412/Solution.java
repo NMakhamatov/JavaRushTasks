@@ -9,6 +9,7 @@ import java.util.*;
 /* 
 Знания - сила!
 */
+//todo доделать
 public class Solution {
     public static void main(String[] args) {
         List<Stock> stocks = getStocks();
@@ -41,11 +42,21 @@ public class Solution {
     }
 
     public static void sort(List<Stock> list) {
-        list.sort(new Comparator<Stock>() {
-            public int compare(Stock stock1, Stock stock2) {
-                return 0;
-            }
-        });
+//        list.sort(
+//                new Comparator<Stock>() {
+//            public int compare(Stock stock1, Stock stock2) {
+//                if (!stock1.get("name").equals(stock2.get("name")))
+//                    return stock1.get("name").toString().compareTo(stock2.get("name").toString());
+//                else if (!stock1.get("date").equals(stock2.get("date"))) return ((Date)stock1.get("date")).compareTo((Date)(stock2.get("date")));
+//                else {
+//                    double d1,d2;
+//                    if (stock1.containsKey("change")) d1 = (double) stock1.get("change")
+//                }
+//            }
+//        }
+//        Comparator.comparing((Stock s,String s2) -> {
+//            s.get("name");
+//                }
     }
 
     public static class Stock extends HashMap<String, Object> {
