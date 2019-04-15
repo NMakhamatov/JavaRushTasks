@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /* 
 Сериализация зоопарка
 */
+//done
 public class Solution {
     public static void main(String[] args) throws JsonProcessingException {
         Zoo.Dog dog = new Zoo.Dog("doggy");

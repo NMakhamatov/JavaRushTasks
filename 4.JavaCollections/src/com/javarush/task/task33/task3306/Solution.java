@@ -3,12 +3,16 @@ package com.javarush.task.task33.task3306;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.io.IOException;
 import java.io.StringWriter;
 
 /* 
 Первая сериализация в XML
 */
+//done
 public class Solution {
     public static void main(String[] args) throws IOException, JAXBException {
         Cat cat = new Cat();
@@ -49,16 +53,27 @@ public class Solution {
     }
 
     public static class Pet {
+        @XmlElement
         public String name;
     }
 
+    @XmlType(name = "cat")
+    @XmlRootElement
     public static class Cat extends Pet {
+        @XmlElement
         public int age;
+
+        @XmlElement
         public int weight;
     }
 
+    @XmlType(name = "dog")
+    @XmlRootElement
     public static class Dog extends Pet {
+        @XmlElement
         public int age;
+
+        @XmlElement
         public String owner;
     }
 }
