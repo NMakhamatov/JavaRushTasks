@@ -3,7 +3,7 @@ package com.javarush.task.task34.task3408;
 /* 
 Кэширование
 */
-//todo to do
+//done
 public class Solution {
     public static void main(String[] args) throws Exception {
         SomeKey someKey = new SomeKey();

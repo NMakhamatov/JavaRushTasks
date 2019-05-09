@@ -3,7 +3,7 @@ package com.javarush.task.task34.task3401;
 /* 
 Числа Фибоначчи с помощью рекурсии
 */
-//todo to do
+//done
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -15,6 +15,8 @@ public class Solution {
     }
 
     public int fibonacci(int n) {
-        return 0;
+        if (n == 1 || n == 2) return 1;
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }

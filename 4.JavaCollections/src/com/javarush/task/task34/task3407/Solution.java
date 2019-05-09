@@ -5,10 +5,10 @@ import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Призрачные ссылки
 */
-//todo to do
+//done
 public class Solution {
     public static Helper helper = new Helper();
 
@@ -86,6 +86,16 @@ public class Solution {
             }
             System.out.println(count + " objects are in the queue of phantom reference");
             System.out.println("It took " + getTime() + " sec");
+        }
+
+        public List<PhantomReference<Monkey>> getPopulatedList() {
+            List<PhantomReference<Monkey>> list = new ArrayList<>(200);
+
+            for (int i = 0; i < 200; i++) {
+                list.add(new PhantomReference<Monkey>(new Monkey(), getQueue()));
+            }
+
+            return list;
         }
     }
 }

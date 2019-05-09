@@ -3,7 +3,7 @@ package com.javarush.task.task34.task3402;
 /* 
 Факториал с помощью рекурсии
 */
-//todo to do
+//done
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -14,6 +14,7 @@ public class Solution {
     }
 
     public int factorial(int n) {
-        return 0;
+        if (n <= 1) return 1;
+        return n*factorial(n-1);
     }
 }

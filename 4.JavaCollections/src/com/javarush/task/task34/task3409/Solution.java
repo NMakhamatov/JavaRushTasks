@@ -10,7 +10,7 @@ import java.util.Properties;
 /* 
 Настраиваем логгер
 */
-//todo to do
+//done
 public class Solution {
     public static void main(String args[]) throws IOException {
         String logProperties = "4.JavaCollections/src/" + Solution.class.getPackage().getName().replaceAll("[.]", "/") + "/log4j.properties";
