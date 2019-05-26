@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /* 
 Сериализация даты в JSON
 */
+//done
 public class Solution {
     public static void main(String[] args) throws JsonProcessingException {
         Event event = new Event("event#1");

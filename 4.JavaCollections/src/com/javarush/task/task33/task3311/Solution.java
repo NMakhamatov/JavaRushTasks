@@ -8,6 +8,7 @@ import java.io.StringWriter;
 /* 
 Странная ошибка
 */
+//done
 public class Solution {
     public static void main(String[] args) throws IOException {
         StringWriter stringWriter = new StringWriter();

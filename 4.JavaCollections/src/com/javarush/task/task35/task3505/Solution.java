@@ -7,7 +7,7 @@ import java.util.Map;
 /* 
 List to Map
 */
-//todo to do
+//done
 public class Solution {
     public static void main(String[] args) {
         List<ConvertableUser> users = new ArrayList<>();
